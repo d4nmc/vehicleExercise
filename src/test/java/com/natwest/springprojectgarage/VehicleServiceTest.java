@@ -1,48 +1,43 @@
 package com.natwest.springprojectgarage;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.Assert.assertEquals;
 
 import domain.Vehicle;
+import service.VehicleService;
 
 public class VehicleServiceTest {
+
+@Test
+	public void createVehicleTest() {
+
+// Arrange
+		Vehicle testVehicle = new Vehicle();
+
+// Creating variables to pass into the method
+		String carName = "test_name";
+		String modelName = "test_model";
+		double bhpOutput = 360;
+		double engineSize = 2.5;
+		boolean gotBoost = true;
+		double overallRating = 7.0;
+
+		// Variable for the method to be equal to
+		Vehicle resultVehicle;
+
+		// Act - Do the method we're testing, save it as a variable
 	
-		
-		// I want to test the createVehicle creates a vehicle, and I want
-		// to validate the colour and number of wheels are the same
-		
-		@Test
-		public void createVehicleTest() {
-			
-			// Test would be testing if the return is equal to the return
-			
-			// Arrange
-			// Creating a test vehicle for our expected
-			Vehicle testVehicle = new Vehicle("test_colour", 4, 6, true);
-			
-			// Creating variables to pass into the method
-			String colour = "test_colour";
-			int wheels = 4;
-			int size = 6;
-			boolean spoiler = true;
-			
-			// Variable for the method to be equal to
-			Vehicle resultVehicle;
-			
-			// Act - Do the method we're testing, save it as a variable
-			// resultVehicle = class.method(Pass in paramaters)
-			resultVehicle = VehicleService.createVehicle(colour, wheels, size, spoiler);
-			
-			// Assert
-			System.out.println("=========================");
-			System.out.println(testVehicle);
-			System.out.println(resultVehicle);
-			System.out.println("=========================");
-			assertEquals(colour, resultVehicle.getColour());
+		resultVehicle = VehicleService.createVehicle(carName, modelName, bhpOutput, engineSize, gotBoost,
+				overallRating);
+
+		// Assert
+		System.out.println("=========================");
+		System.out.println(testVehicle);
+		System.out.println(resultVehicle);
+		System.out.println("=========================");
+		assertEquals(carName, resultVehicle.getCarName());
 //			assertEquals(testVehicle.getColour(), resultVehicle.getColour());
-			
-		}
 
 	}
-	
+
 }
