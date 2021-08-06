@@ -5,8 +5,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import domain.Vehicle;
 
-import static org.junit.Assert.assertEquals;
-
 public class VehicleServiceTest {
 	
 		

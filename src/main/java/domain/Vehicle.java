@@ -2,8 +2,6 @@ package domain;
 
 public class Vehicle {
 
-	
-
 private String carName;
 private String modelName;
 private double bhpOutput;
